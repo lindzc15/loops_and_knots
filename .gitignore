@@ -3,4 +3,6 @@ node_modules
 myvenv.DS_Store
 
 .env
+venv
+backend/.env
 backend/.env
