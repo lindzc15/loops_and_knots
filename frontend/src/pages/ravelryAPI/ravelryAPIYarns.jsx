@@ -20,7 +20,7 @@ const RavelryAPIYarns = ({ appliedWeightFilters, filtering, searching, query, se
             try {
                 let response;
                 if (searching) {
-                    response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/yarns/search", {
+                    response = await fetch("http://localhost:8000/api/ravelry/yarns/search", {
                         method: "POST",
                         body: JSON.stringify({
                             query: query
@@ -33,7 +33,7 @@ const RavelryAPIYarns = ({ appliedWeightFilters, filtering, searching, query, se
                     })
                 }
                 else {
-                    response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/yarns", {
+                    response = await fetch("http://localhost:8000/api/ravelry/yarns", {
                         method: "GET",
                     })
                 }
@@ -43,7 +43,7 @@ const RavelryAPIYarns = ({ appliedWeightFilters, filtering, searching, query, se
                 console.log("data", data);
                 const yarnDetails = await Promise.all(
                     data.yarnIDs.map(async (id) => {
-                        const yarnDetailsResponse = await fetch(`https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/yarn/details`, {
+                        const yarnDetailsResponse = await fetch(`http://localhost:8000/api/ravelry/yarn/details`, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -127,7 +127,7 @@ const RavelryAPIYarns = ({ appliedWeightFilters, filtering, searching, query, se
         e.stopPropagation();
         if (isLoggedIn) {
             try {
-                let response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/favorites/yarn", {
+                let response = await fetch("http://localhost:8000/api/favorites/yarn", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

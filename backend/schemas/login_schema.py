@@ -10,7 +10,7 @@ class VerifyLoginRequest(BaseModel):
 
 class LoginResponse(BaseModel):
     success: bool
-    jwt_token: str|None = None
+    jwt_token: str 
 
 class RegisterResponse(BaseModel):
     success: bool

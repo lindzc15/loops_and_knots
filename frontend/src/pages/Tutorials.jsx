@@ -12,7 +12,7 @@ const Tutorials = () => {
     useEffect(() => {
         const fetchTutorials = async () => {
             try {
-                const response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/tutorials", {
+                const response = await fetch("http://localhost:8000/api/tutorials", {
                     method: "GET",
                 })
                 if (!response.ok) throw new Error("Failed to fetch patterns");

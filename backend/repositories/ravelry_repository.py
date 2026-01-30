@@ -18,7 +18,7 @@ RAVELRY_PASSWORD = os.getenv("RAVELRY_PASSWORD")
 
 class RavelryRepository:
     @staticmethod
-    async def get_all_yarns() -> YarnIDResponse | None:
+    async def get_all_yarns() -> YarnIDResponse:
         all_url = "https://api.ravelry.com/yarns/search.json"
         credentials = f"{RAVELRY_USERNAME}:{RAVELRY_PASSWORD}"
         encoded_credentials = base64.b64encode(credentials.encode()).decode()
@@ -32,10 +32,10 @@ class RavelryRepository:
                     
                     yarn_ids = [YarnID(id=str(yarn["id"])) for yarn in yarn_data["yarns"]]
                     return YarnIDResponse(yarnIDs=yarn_ids)
-                return None
+                return 
                     
     @staticmethod
-    async def get_yarn_details(id: str) -> YarnResponse | None:
+    async def get_yarn_details(id: str) -> YarnResponse:
         url = f"https://api.ravelry.com/yarns/{id}.json"
         credentials = f"{RAVELRY_USERNAME}:{RAVELRY_PASSWORD}"
         encoded_credentials = base64.b64encode(credentials.encode()).decode()
@@ -60,7 +60,7 @@ class RavelryRepository:
             return None
         
     @staticmethod
-    async def get_pattern_details(id) -> PatternsResponse | None:
+    async def get_pattern_details(id) -> PatternsResponse:
         url = f"https://api.ravelry.com/patterns/{id}.json"
         credentials = f"{RAVELRY_USERNAME}:{RAVELRY_PASSWORD}"
         encoded_credentials = base64.b64encode(credentials.encode()).decode()
@@ -84,7 +84,7 @@ class RavelryRepository:
         
     
     @staticmethod
-    async def get_all_patterns() -> PatternsResponse | None:
+    async def get_all_patterns() -> PatternsResponse:
         all_url = "https://api.ravelry.com/patterns/search.json"
         credentials = f"{RAVELRY_USERNAME}:{RAVELRY_PASSWORD}"
         encoded_credentials = base64.b64encode(credentials.encode()).decode()
@@ -101,15 +101,17 @@ class RavelryRepository:
                     print(f"id {pattern['id']}")
 
                 pattern_basics_list = [
-                    PatternBasics(                    
+                    PatternBasics(
                         id=str(pattern["id"]),
                         free=pattern["free"],
                         name=pattern["name"],
-                        designer=DesignerInfo(**pattern["designer"]) if "designer" in pattern else None,
-                        first_photo=PatternPhotoBasic(medium_url=pattern["first_photo"]["medium_url"]) if "first_photo" in pattern else None
+                        designer=DesignerInfo(**pattern["designer"]) if pattern.get("designer") else None,
+                        first_photo=PatternPhotoBasic(medium_url=pattern["first_photo"]["medium_url"]) 
+                                    if pattern.get("first_photo") else None
                     )
                     for pattern in patternStuff
                 ]
+
 
                 return PatternsResponse(patterns=pattern_basics_list)
 
@@ -118,7 +120,7 @@ class RavelryRepository:
 
 
     @staticmethod
-    async def search_patterns(query) -> PatternsResponse | None:
+    async def search_patterns(query) -> PatternsResponse:
         base_url = "https://api.ravelry.com/patterns/search.json?query="
         credentials = f"{RAVELRY_USERNAME}:{RAVELRY_PASSWORD}"
         encoded_credentials = base64.b64encode(credentials.encode()).decode()
@@ -148,7 +150,7 @@ class RavelryRepository:
 
 
     @staticmethod
-    async def search_yarns(query) -> YarnIDResponse | None:
+    async def search_yarns(query) -> YarnIDResponse:
         base_url = "https://api.ravelry.com/yarns/search.json?query="
         credentials = f"{RAVELRY_USERNAME}:{RAVELRY_PASSWORD}"
         encoded_credentials = base64.b64encode(credentials.encode()).decode()

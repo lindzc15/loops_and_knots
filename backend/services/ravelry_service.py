@@ -4,25 +4,25 @@ from typing import List, Optional
 
 class RavelryService:
     @staticmethod
-    async def get_all_yarns() -> YarnIDResponse | None:
+    async def get_all_yarns() -> YarnIDResponse:
         return await RavelryRepository.get_all_yarns()
     
     @staticmethod
-    async def get_yarn_details(id) -> YarnResponse | None:
+    async def get_yarn_details(id) -> YarnResponse:
         return await RavelryRepository.get_yarn_details(id)
 
     @staticmethod
-    async def get_all_patterns() -> PatternsResponse | None:
+    async def get_all_patterns() -> PatternsResponse:
         return await RavelryRepository.get_all_patterns()
     
     @staticmethod
-    async def get_pattern_details(id) -> PatternBasics | None:
+    async def get_pattern_details(id) -> PatternBasics:
         return await RavelryRepository.get_pattern_details(id)
     
     @staticmethod
-    async def search_patterns(query) -> PatternsResponse | None:
+    async def search_patterns(query) -> PatternsResponse:
         return await RavelryRepository.search_patterns(query)
     
     @staticmethod
-    async def search_yarns(query) -> YarnIDResponse | None:
+    async def search_yarns(query) -> YarnIDResponse:
         return await RavelryRepository.search_yarns(query)

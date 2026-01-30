@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
         async function verify_token(token) {
             try {
                 // POST request to backend to verify if user is authenticated or not
-                const response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/login/verify", {
+                const response = await fetch("http://localhost:8000/api/login/verify", {
                     method: "POST",
 
                     // send token for verification
@@ -98,7 +98,7 @@ export const AuthProvider = ({ children }) => {
     async function login(username, password) {
         try {
             // POST request to backend to attempt login
-            const response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/login", {
+            const response = await fetch("http://localhost:8000/api/login", {
                 method: "POST",
 
                 // send user and pass for verification

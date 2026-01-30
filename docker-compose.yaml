@@ -1,0 +1,16 @@
+services:
+  postgres_loops_container:
+    image: postgres:16
+    container_name: "postgres_loops_container"
+    restart: always
+    environment: 
+      POSTGRES_PASSWORD: L9547801c!
+      POSTGRES_USER: postgres
+      POSTGRES_DB: loopsdb
+    volumes:
+      - postgres_loops_data_container:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
+
+volumes:
+  postgres_loops_data_container:

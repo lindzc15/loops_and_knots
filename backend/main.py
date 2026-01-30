@@ -24,7 +24,7 @@ app.container = container
 if settings.app_env == "local":
     app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:3000", "http://127.0.0.1:5173"],  # Allow requests from React frontend
+    allow_origins=["http://localhost:3001", "http://localhost:3000", "http://127.0.0.1:3000", "http://127.0.0.1:3001"],  # Allow requests from React frontend
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, OPTIONS, etc.)
     allow_headers=["*"],  # Allow all headers

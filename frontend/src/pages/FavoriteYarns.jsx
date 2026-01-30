@@ -21,7 +21,7 @@ const FavoriteYarns = () => {
             setLoading(true);
             setError("");
             try {
-                let response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/favorites/yarn/all", {
+                let response = await fetch("http://localhost:8000/api/favorites/yarn/all", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -36,7 +36,7 @@ const FavoriteYarns = () => {
 
                 const yarnDetails = await Promise.all(
                     data.yarnIDs.map(async (id) => {
-                        const yarnDetailsResponse = await fetch(`https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/yarn/details`, {
+                        const yarnDetailsResponse = await fetch(`http://localhost:8000/api/ravelry/yarn/details`, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const FavoriteYarns = () => {
         e.stopPropagation();
         console.log(e.target.value);
         try {
-            let response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/favorites/yarn", {
+            let response = await fetch("http://localhost:8000/api/favorites/yarn", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

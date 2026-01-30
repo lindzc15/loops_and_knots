@@ -6,7 +6,7 @@ const Home = () => {
         <MainLayout title="About Us | Loops & Knots">
             <div className="container text-center d-flex flex-column flex-grow-1 justify-content-center">
                 <h1>About Loops & Knots</h1>
-                <p>Welcome to my UVU CS3660 (Web Programming 2) project. I created a web
+                <p>Welcome to my website! I created a web
                     application dedicated to all things knit and crochet. Users can
                     view and favorite yarns and patterns. While browsing, users can filter and search. They are also able to create
                     an account and sign in so that they can view and delete favorites. Users

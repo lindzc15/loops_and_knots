@@ -4,6 +4,6 @@ from typing import List, Optional
 
 class TutorialService:
     @staticmethod
-    async def get_tutorials() -> TutorialResponse | None:
+    async def get_tutorials() -> TutorialResponse:
         return await TutorialsRepository.get_tutorials()
     

@@ -22,6 +22,7 @@ async def patterns(id: PatternID):
 
 @router.post("/patterns/search", response_model=PatternsResponse)
 async def patterns(query: Search):
+    print('search endpoint hit')
     return await RavelryService.search_patterns(query.query)
 
 @router.post("/yarns/search", response_model=YarnIDResponse)

@@ -21,7 +21,7 @@ const FavoritePatterns = () => {
             setLoading(true);
             setError("");
             try {
-                let response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/favorites/pattern/all", {
+                let response = await fetch("http://localhost:8000/api/favorites/pattern/all", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -36,7 +36,7 @@ const FavoritePatterns = () => {
 
                 const patternDetails = await Promise.all(
                     data.patternIDs.map(async (id) => {
-                        const patternDetailsResponse = await fetch(`https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/patterns/details`, {
+                        const patternDetailsResponse = await fetch(`http://localhost:8000/api/ravelry/patterns/details`, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const FavoritePatterns = () => {
         e.stopPropagation();
         console.log(e.target.value);
         try {
-            let response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/favorites/pattern", {
+            let response = await fetch("http://localhost:8000/api/favorites/pattern", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

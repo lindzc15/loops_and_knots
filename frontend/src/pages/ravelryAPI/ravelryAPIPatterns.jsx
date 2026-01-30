@@ -20,7 +20,7 @@ const RavelryAPIPatterns = ({ appliedFilters, filtering, searching, query, searc
                 console.log(filtering);
                 if (searching) {
                     console.log("searching!");
-                    response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/patterns/search", {
+                    response = await fetch("http://localhost:8000/api/ravelry/patterns/search", {
                         method: "POST",
                         body: JSON.stringify({
                             query: query
@@ -38,7 +38,7 @@ const RavelryAPIPatterns = ({ appliedFilters, filtering, searching, query, searc
                     //check if knit and not crochet checked
                     if (appliedFilters.knit === true && appliedFilters.crochet === false) {
                         console.log("searching knit!");
-                        response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/patterns/search", {
+                        response = await fetch("http://localhost:8000/api/ravelry/patterns/search", {
                             method: "POST",
                             body: JSON.stringify({
                                 query: "knit"
@@ -53,7 +53,7 @@ const RavelryAPIPatterns = ({ appliedFilters, filtering, searching, query, searc
                     //check if crochet and not knit checked
                     else if (appliedFilters.crochet === true && appliedFilters.knit === false) {
                         console.log("searching crochet!");
-                        response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/patterns/search", {
+                        response = await fetch("http://localhost:8000/api/ravelry/patterns/search", {
                             method: "POST",
                             body: JSON.stringify({
                                 query: "crochet"
@@ -68,7 +68,7 @@ const RavelryAPIPatterns = ({ appliedFilters, filtering, searching, query, searc
                     //selected both, just get all patterns
                     else {
                         console.log("selected both filters!");
-                        response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/patterns", {
+                        response = await fetch("http://localhost:8000/api/ravelry/patterns", {
                             method: "GET",
                         })
                     }
@@ -76,7 +76,7 @@ const RavelryAPIPatterns = ({ appliedFilters, filtering, searching, query, searc
                 }
                 else {
                     console.log("no filter, regular!");
-                    response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/ravelry/patterns", {
+                    response = await fetch("http://localhost:8000/api/ravelry/patterns", {
                         method: "GET",
                     })
                 }
@@ -121,7 +121,7 @@ const RavelryAPIPatterns = ({ appliedFilters, filtering, searching, query, searc
         e.stopPropagation();
         if (isLoggedIn) {
             try {
-                let response = await fetch("https://udg0v8fa9j.execute-api.us-west-2.amazonaws.com/cs3660prod/api/favorites/pattern", {
+                let response = await fetch("http://localhost:8000/api/favorites/pattern", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
