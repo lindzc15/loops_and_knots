@@ -49,3 +49,10 @@ The frontend runs on `http://localhost:3001/`, with the port specified in `front
 cd frontend
 npm run dev
 ```
+
+## Future Work
+Future release goals include allowing
+users to upload their own yarns, patterns, and tutorials. There would be support
+for purchasing and trading each of these items. Users would also be able to message
+other users in the web application. Filtering would be expanded to give the user more control over the results. Users would
+also be able to edit a wider range of their account details.
