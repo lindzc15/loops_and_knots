@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  background-color: var(--gen-background);
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --button-background: #32235E;
+  --header-text: #32235E;
+  --button-txt: #D7D7FA;
+  --gen-background: #F8F4FA;
+
+  --secondary-background: #A9A9DB;
+  --secondary-txt: #3B258A;
+
+}
+
+.classicButton {
+  background-color: var(--button-background) !important;
+  color: var(--button-txt) !important;
+  border-color: var(--button-background) !important;
+}
+
+.secondaryButton {
+  background-color: white !important;
+  color: var(--button-background) !important;
+  border-color: var(--button-background) !important;
+}
+
+.secondaryButton:hover {
+  background-color: var(--button-txt) !important;
+}
+
+.navbar,
+.navText {
+  background-color: var(--secondary-background);
+  color: var(--secondary-txt);
+}
+
+.brand-name {
+  font-family: 'Pacifico', cursive;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  color: var(--header-text);
+}
+
+h2 {
+  font-size: 3em;
+}
+
+.searchPage {
+  text-align: right;
+}
+
+.card-header {
+  background-color: var(--secondary-background);
+  color: var(--secondary-txt);
+  text-align: left;
+  width: 100;
+}
+
+.list-group {
+  text-align: left;
+}
+
+
+.backButton {
+  width: 8%;
+}
+
+.profileCard {
+  background-color: var(--button-background);
+  color: var(--button-txt);
+}
+
+.text-primary {
+  color: var(--button-background) !important;
+}
+
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  color: var(--button-background) !important;
+  font-weight: bold;
+}
+
+/* z index to put alert in front of product display */
+.custom-alert {
+  z-index: 100;
+  background-color: var(--button-background) !important;
+  color: var(--button-txt) !important;
+  opacity: 0.9;
+  margin-top: 1em;
+  width: auto;
+}
+
+li,
+a {
+  color: var(--secondary-txt) !important;
+}
+
+.cursor {
+  cursor: default !important;
+}
+
+.fav {
+  width: 75%;
+  margin-bottom: 4%;
+  align-self: center;
+}
+
+.fa-solid {
+  margin-right: 3%;
+}
+
+.spinner {
+  margin-top: 3%;
+}
+
+.created {
+  width: 100%;
+  text-align: center;
+}
+
+.alert {
+  text-align: center;
+}
